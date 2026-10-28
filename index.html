@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marcos Bernardino</title>
+<title>Marcus Bernardino</title>
 <meta name="description" content="Enfermeiro perioperatório e engenheiro informático em transição para a cibersegurança em saúde.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -28,9 +28,17 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-
 a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
 .wrap{max-width:1080px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:280px 1fr;gap:56px}
 aside{position:sticky;top:0;align-self:start;padding:48px 0;height:100vh}
-.name{font:600 1.7rem/1.2 "Source Serif 4",Georgia,serif;margin:0 0 6px}
+.name{font:600 1.7rem/1.2 "Source Serif 4",Georgia,serif;margin:0 0 6px;text-align:center}
 .ipa{font:400 .8rem "IBM Plex Mono",monospace;color:var(--muted);margin:0 0 18px}
-.role{color:var(--muted);font-size:.95rem;margin:0 0 24px}
+.pulse{display:block;width:100%;max-width:240px;height:auto;margin:4px auto 10px}
+.quote{margin:0 0 14px;text-align:center}
+.quote blockquote{margin:0;font:italic 400 1.02rem/1.4 "Source Serif 4",Georgia,serif}
+.quote figcaption{font:500 .72rem "IBM Plex Mono",monospace;color:var(--accent);margin-top:6px;letter-spacing:.04em}
+
+.soap{margin:0 0 24px;padding:12px 14px;border:1px solid var(--line);border-left:3px solid var(--warm);border-radius:6px;background:var(--panel);font:400 .78rem/1.5 "IBM Plex Mono",monospace}
+.soap div{padding:4px 0}
+.soap dt{font-weight:500;color:var(--warm);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase}
+.soap dd{margin:0;color:var(--muted)}
 nav a{display:block;padding:6px 0;color:var(--ink);text-decoration:none;font-size:.95rem;border-left:2px solid transparent;padding-left:12px;margin-left:-14px}
 nav a:hover,nav a.on{border-left-color:var(--accent);color:var(--accent)}
 .tools{display:flex;gap:8px;margin-top:28px}
@@ -80,11 +88,28 @@ footer{color:var(--muted);font-size:.8rem;padding-top:8px}
 <body>
 <div class="wrap">
   <aside>
-    <p class="name">Marcos Bernardino</p>
-    <p class="role">
-      <span data-l="pt">Enfermeiro perioperatório · Engenheiro informático · Em transição para a cibersegurança em saúde</span>
-      <span data-l="en">Perioperative nurse · Computer engineer · Moving into healthcare cybersecurity</span>
-    </p>
+    <p class="name">Marcus Bernardino</p>
+    <svg class="pulse" viewBox="0 0 240 40" aria-hidden="true">
+      <path d="M0 22 H52 L60 22 L66 8 L74 36 L82 14 L88 22 H118" fill="none" stroke="var(--warm)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M118 22 H128" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 4"/>
+      <text x="134" y="27" font-family="IBM Plex Mono, monospace" font-size="13" fill="var(--accent)">0101 &lt;/&gt;</text>
+    </svg>
+    <figure class="quote">
+      <blockquote>&ldquo;The most dangerous phrase in the language is, &lsquo;We&rsquo;ve always done it this way.&rsquo;&rdquo;</blockquote>
+      <figcaption>Grace Hopper, 1976</figcaption>
+    </figure>
+    <dl class="soap" data-l="pt">
+      <div><dt>Sinais</dt><dd>Vontade constante de perceber como os sistemas falham.</dd></div>
+      <div><dt>Origem</dt><dd>14 anos entre o Bloco Operatório e os Cuidados Intensivos Neurocríticos. Licenciado em Eng. Informática.</dd></div>
+      <div><dt>Anomalia</dt><dd>Curiosidade crónica detectada. Sem tratamento conhecido.</dd></div>
+      <div><dt>Protocolo</dt><dd>Alta para o digital. Monitorização contínua. Próxima avaliação: no próximo commit.</dd></div>
+    </dl>
+    <dl class="soap" data-l="en">
+      <div><dt>Signs</dt><dd>A constant urge to understand how systems fail.</dd></div>
+      <div><dt>Origin</dt><dd>14 years between the Operating Theatre and Neurocritical Intensive Care. BSc in Computer Engineering.</dd></div>
+      <div><dt>Anomaly</dt><dd>Chronic curiosity detected. No known cure.</dd></div>
+      <div><dt>Protocol</dt><dd>Discharged to digital. Continuous monitoring. Next assessment: the next commit.</dd></div>
+    </dl>
     <nav>
       <a href="#sobre"><span data-l="pt">Sobre</span><span data-l="en">About</span></a>
       <a href="#percurso"><span data-l="pt">Percurso</span><span data-l="en">Background</span></a>
@@ -109,13 +134,13 @@ footer{color:var(--muted);font-size:.8rem;padding-top:8px}
       <p class="kicker"><span data-l="pt">Bem-vindo</span><span data-l="en">Welcome</span></p>
       <h2><span data-l="pt">Sobre mim</span><span data-l="en">About me</span></h2>
       <div data-l="pt">
-        <p class="lead">Sou enfermeiro há cerca de 14 anos, em bloco operatório e cuidados intensivos, e licenciado em Engenharia Informática.</p>
-        <p>Estou a construir uma carreira em cibersegurança, com foco na saúde: hospitais, dispositivos médicos e a protecção de dados clínicos. Conheço por dentro o ambiente onde estes sistemas funcionam — e onde falham.</p>
+        <p class="lead">Sou enfermeiro há cerca de 14 anos, no Bloco Operatório e nos Cuidados Intensivos Neurocríticos, e licenciado em Engenharia Informática.</p>
+        <p>Estou a construir uma carreira em cibersegurança, com foco na saúde: hospitais, dispositivos médicos e a protecção de dados clínicos. Conheço por dentro o ambiente onde estes sistemas funcionam e onde falham.</p>
         <p>Este site regista o percurso: o que estudo, o que pratico e o que escrevo.</p>
       </div>
       <div data-l="en">
-        <p class="lead">I have worked as a nurse for about 14 years, in operating theatres and intensive care, and hold a degree in Computer Engineering.</p>
-        <p>I am building a career in cybersecurity with a healthcare focus: hospitals, medical devices and the protection of clinical data. I know from the inside the environment where these systems run — and where they fail.</p>
+        <p class="lead">I have worked as a nurse for about 14 years, in the Operating Theatre and Neurocritical Intensive Care, and hold a degree in Computer Engineering.</p>
+        <p>I am building a career in cybersecurity with a healthcare focus: hospitals, medical devices and the protection of clinical data. I know from the inside the environment where these systems run and where they fail.</p>
         <p>This site documents the journey: what I study, what I practise and what I write.</p>
       </div>
     </section>
@@ -134,7 +159,7 @@ footer{color:var(--muted);font-size:.8rem;padding-top:8px}
         <li>
           <div class="when"><span class="edit">EDITAR</span> – <span data-l="pt">presente</span><span data-l="en">present</span></div>
           <div class="what">
-            <strong><span data-l="pt">Enfermeiro de Bloco Operatório e Cuidados Intensivos</span><span data-l="en">Operating Theatre and Intensive Care Nurse</span></strong>
+            <strong><span data-l="pt">Enfermeiro de Bloco Operatório e Cuidados Intensivos Neurocríticos</span><span data-l="en">Operating Theatre and Neurocritical Intensive Care Nurse</span></strong>
             <span data-l="pt">Cerca de 14 anos de experiência clínica, Lisboa</span><span data-l="en">About 14 years of clinical experience, Lisbon</span>
           </div>
         </li>
@@ -147,7 +172,7 @@ footer{color:var(--muted);font-size:.8rem;padding-top:8px}
       <p data-l="pt">Plano de estudo 2026–2027, do zero à Security+ e ao CTeSP. Actualizado à medida que avanço.</p>
       <p data-l="en">Study plan 2026–2027, from the ground up to Security+. Updated as I go.</p>
 
-      <h3><span data-l="pt">Fase 0 — Fundamentos</span><span data-l="en">Phase 0 — Fundamentals</span></h3>
+      <h3><span data-l="pt">Fase 0: Fundamentos</span><span data-l="en">Phase 0: Fundamentals</span></h3>
       <div class="cards">
         <div class="card"><span class="tag doing"><span data-l="pt">a decorrer</span><span data-l="en">in progress</span></span><h4>Introduction to Cybersecurity</h4><p>Cisco Networking Academy</p></div>
         <div class="card"><span class="tag todo"><span data-l="pt">próximo</span><span data-l="en">next</span></span><h4>Networking Basics</h4><p>Cisco Networking Academy</p></div>
@@ -155,7 +180,7 @@ footer{color:var(--muted);font-size:.8rem;padding-top:8px}
         <div class="card"><span class="tag todo"><span data-l="pt">próximo</span><span data-l="en">next</span></span><h4>Linux &amp; Windows Fundamentals</h4><p>TryHackMe</p></div>
       </div>
 
-      <h3><span data-l="pt">Fase 1 — Certificação</span><span data-l="en">Phase 1 — Certification</span></h3>
+      <h3><span data-l="pt">Fase 1: Certificação</span><span data-l="en">Phase 1: Certification</span></h3>
       <div class="cards">
         <div class="card"><span class="tag todo"><span data-l="pt">planeado · 2027</span><span data-l="en">planned · 2027</span></span><h4>CompTIA Security+</h4><p data-l="pt">Exame previsto para Julho de 2027</p><p data-l="en">Exam planned for July 2027</p></div>
       </div>
@@ -182,7 +207,7 @@ footer{color:var(--muted);font-size:.8rem;padding-top:8px}
       <h2><span data-l="pt">Contacto</span><span data-l="en">Contact</span></h2>
       <p data-l="pt">Para contactos profissionais: <a href="mailto:EDITAR@email.com">EDITAR@email.com</a></p>
       <p data-l="en">For professional enquiries: <a href="mailto:EDITAR@email.com">EDITAR@email.com</a></p>
-      <footer>© <span id="yr"></span> Marcos Bernardino</footer>
+      <footer>© <span id="yr"></span> Marcus Bernardino</footer>
     </section>
   </main>
 </div>
