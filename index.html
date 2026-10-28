@@ -23,11 +23,11 @@
   --accent:#5fb3a7; --accent-soft:#1d2d2a; --warm:#d98a68;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:auto}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif}
 a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
 .wrap{max-width:1080px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:280px 1fr;gap:56px}
-aside{position:sticky;top:0;align-self:start;padding:48px 0;height:100vh}
+aside{align-self:start;padding:48px 0}
 .name{font:600 1.7rem/1.2 "Source Serif 4",Georgia,serif;margin:0 0 6px;text-align:center}
 .ipa{font:400 .8rem "IBM Plex Mono",monospace;color:var(--muted);margin:0 0 18px}
 .pulse{display:block;width:100%;max-width:240px;height:auto;margin:4px auto 10px}
@@ -47,12 +47,14 @@ nav a:hover,nav a.on{border-left-color:var(--accent);color:var(--accent)}
 .links{margin-top:28px;font-size:.9rem}
 .links a{display:block;padding:3px 0}
 main{padding:48px 0 96px}
-section{padding:8px 0 40px;border-bottom:1px solid var(--line);margin-bottom:40px}
-section:last-child{border-bottom:0}
+main section{display:none;padding:8px 0 40px}
+main section.show{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 h2{font:600 1.45rem/1.3 "Source Serif 4",Georgia,serif;margin:0 0 16px}
 h3{font-size:1rem;margin:22px 0 6px}
 .kicker{font:500 .75rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--warm);margin:0 0 8px}
 .lead{font-size:1.1rem}
+#sobre div p{text-align:justify;text-indent:1.5em;font-size:1.05rem}
 .timeline{list-style:none;padding:0;margin:0}
 .timeline li{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:12px 0;border-top:1px solid var(--line)}
 .timeline li:first-child{border-top:0}
@@ -134,14 +136,14 @@ footer{color:var(--muted);font-size:.8rem;padding-top:8px}
       <p class="kicker"><span data-l="pt">Bem-vindo</span><span data-l="en">Welcome</span></p>
       <h2><span data-l="pt">Sobre mim</span><span data-l="en">About me</span></h2>
       <div data-l="pt">
-        <p class="lead">Sou enfermeiro há cerca de 14 anos, no Bloco Operatório e nos Cuidados Intensivos Neurocríticos, e licenciado em Engenharia Informática.</p>
-        <p>Estou a construir uma carreira em cibersegurança, com foco na saúde: hospitais, dispositivos médicos e a protecção de dados clínicos. Conheço por dentro o ambiente onde estes sistemas funcionam e onde falham.</p>
-        <p>Este site regista o percurso: o que estudo, o que pratico e o que escrevo.</p>
+        <p class="lead">São três da manhã numa Unidade de Cuidados Intensivos. Um valor muda no monitor e, antes de o alarme tocar, já percebi o que vem a seguir. Foram 14 anos assim, entre o Bloco Operatório e os Cuidados Intensivos Neurocríticos, a ler sinais que ainda não eram problemas.</p>
+        <p>Pelo caminho licenciei-me em Engenharia Informática e descobri que os sistemas informáticos também dão sinais antes de falharem. É preciso é saber ouvi-los.</p>
+        <p>Este site é o diário de bordo dessa mudança: o que estudo, o que pratico e o que vou descobrindo, registado com o rigor de uma nota clínica.</p>
       </div>
       <div data-l="en">
-        <p class="lead">I have worked as a nurse for about 14 years, in the Operating Theatre and Neurocritical Intensive Care, and hold a degree in Computer Engineering.</p>
-        <p>I am building a career in cybersecurity with a healthcare focus: hospitals, medical devices and the protection of clinical data. I know from the inside the environment where these systems run and where they fail.</p>
-        <p>This site documents the journey: what I study, what I practise and what I write.</p>
+        <p class="lead">It is three in the morning in an Intensive Care Unit. A value shifts on the monitor and, before the alarm sounds, I already know what comes next. Fourteen years like this, between the Operating Theatre and Neurocritical Intensive Care, reading signs that were not yet problems.</p>
+        <p>Along the way I earned a degree in Computer Engineering and found that computer systems also give signs before they fail. You just have to know how to listen.</p>
+        <p>This site is the logbook of that change: what I study, what I practise and what I discover, recorded with the rigour of a clinical note.</p>
       </div>
     </section>
 
@@ -234,10 +236,16 @@ footer{color:var(--muted);font-size:.8rem;padding-top:8px}
   };
   document.getElementById('yr').textContent=new Date().getFullYear();
   var links=[].slice.call(document.querySelectorAll('nav a'));
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}
-  })},{rootMargin:'-40% 0px -55% 0px'});
-  document.querySelectorAll('main section').forEach(function(s){io.observe(s)});
+  var secs=[].slice.call(document.querySelectorAll('main section'));
+  function show(){
+    var id=(location.hash||'#sobre').slice(1);
+    if(!document.getElementById(id)) id='sobre';
+    secs.forEach(function(s){s.classList.toggle('show',s.id===id)});
+    links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+id)});
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',show);
+  show();
 })();
 </script>
 </body>
