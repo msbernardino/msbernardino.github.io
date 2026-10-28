@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marcus Bernardino</title>
+<meta name="description" content="Enfermeiro perioperatório e engenheiro informático em transição para a cibersegurança em saúde.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f6f2; --panel:#ffffff; --ink:#1d2321; --muted:#5d6763; --line:#e2e0d8;
+  --accent:#1f6f66; --accent-soft:#e3efec; --warm:#b5613f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121615; --panel:#191e1d; --ink:#e7ebe9; --muted:#9aa5a1; --line:#2a3230;
+    --accent:#5fb3a7; --accent-soft:#1d2d2a; --warm:#d98a68;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121615; --panel:#191e1d; --ink:#e7ebe9; --muted:#9aa5a1; --line:#2a3230;
+  --accent:#5fb3a7; --accent-soft:#1d2d2a; --warm:#d98a68;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:280px 1fr;gap:56px}
+aside{position:sticky;top:0;align-self:start;padding:48px 0;height:100vh}
+.name{font:600 1.7rem/1.2 "Source Serif 4",Georgia,serif;margin:0 0 6px}
+.ipa{font:400 .8rem "IBM Plex Mono",monospace;color:var(--muted);margin:0 0 18px}
+.pulse{display:block;width:100%;max-width:240px;height:auto;margin:4px 0 10px}
+.quote{margin:0 0 14px;text-align:center}
+.quote blockquote{margin:0;font:italic 400 1.02rem/1.4 "Source Serif 4",Georgia,serif}
+.quote figcaption{font:500 .72rem "IBM Plex Mono",monospace;color:var(--accent);margin-top:6px;letter-spacing:.04em}
+
+.soap{margin:0 0 24px;padding:12px 14px;border:1px solid var(--line);border-left:3px solid var(--warm);border-radius:6px;background:var(--panel);font:400 .78rem/1.5 "IBM Plex Mono",monospace}
+.soap div{padding:4px 0}
+.soap dt{font-weight:500;color:var(--warm);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase}
+.soap dd{margin:0;color:var(--muted)}
+nav a{display:block;padding:6px 0;color:var(--ink);text-decoration:none;font-size:.95rem;border-left:2px solid transparent;padding-left:12px;margin-left:-14px}
+nav a:hover,nav a.on{border-left-color:var(--accent);color:var(--accent)}
+.tools{display:flex;gap:8px;margin-top:28px}
+.tools button{font:500 .78rem "IBM Plex Mono",monospace;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:6px 10px;cursor:pointer}
+.tools button[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.links{margin-top:28px;font-size:.9rem}
+.links a{display:block;padding:3px 0}
+main{padding:48px 0 96px}
+section{padding:8px 0 40px;border-bottom:1px solid var(--line);margin-bottom:40px}
+section:last-child{border-bottom:0}
+h2{font:600 1.45rem/1.3 "Source Serif 4",Georgia,serif;margin:0 0 16px}
+h3{font-size:1rem;margin:22px 0 6px}
+.kicker{font:500 .75rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--warm);margin:0 0 8px}
+.lead{font-size:1.1rem}
+.timeline{list-style:none;padding:0;margin:0}
+.timeline li{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:12px 0;border-top:1px solid var(--line)}
+.timeline li:first-child{border-top:0}
+.when{font:400 .85rem "IBM Plex Mono",monospace;color:var(--muted);padding-top:2px}
+.what strong{display:block}
+.what span{color:var(--muted);font-size:.93rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
+.card .tag{display:inline-block;font:500 .7rem "IBM Plex Mono",monospace;padding:2px 8px;border-radius:99px;background:var(--accent-soft);color:var(--accent);margin-bottom:8px}
+.card .tag.todo{background:transparent;border:1px solid var(--line);color:var(--muted)}
+.card .tag.doing{background:var(--warm);color:#fff}
+.card h4{margin:0 0 4px;font-size:.98rem}
+.card p{margin:0;color:var(--muted);font-size:.88rem}
+.pub{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:18px 20px}
+.pub .title{font:600 1.05rem "Source Serif 4",Georgia,serif}
+.pub .meta{color:var(--muted);font-size:.88rem;margin:4px 0 10px}
+.note{font-size:.85rem;color:var(--muted)}
+.edit{background:#fff3c4;color:#5a4500;padding:0 4px;border-radius:3px;font-size:.85em}
+[data-l]{display:none}
+html[lang="pt"] [data-l="pt"], html[lang="en"] [data-l="en"]{display:revert}
+footer{color:var(--muted);font-size:.8rem;padding-top:8px}
+@media (max-width:820px){
+  .wrap{grid-template-columns:1fr;gap:0}
+  aside{position:static;height:auto;padding:32px 0 8px;border-bottom:1px solid var(--line)}
+  nav{display:flex;flex-wrap:wrap;gap:4px 16px}
+  nav a{border-left:0;margin:0;padding:4px 0}
+  .links{display:flex;flex-wrap:wrap;gap:4px 16px}
+  main{padding-top:32px}
+  .timeline li{grid-template-columns:1fr;gap:2px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <aside>
+    <p class="name">Marcus Bernardino</p>
+    <svg class="pulse" viewBox="0 0 240 40" aria-hidden="true">
+      <path d="M0 22 H52 L60 22 L66 8 L74 36 L82 14 L88 22 H118" fill="none" stroke="var(--warm)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M118 22 H128" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 4"/>
+      <text x="134" y="27" font-family="IBM Plex Mono, monospace" font-size="13" fill="var(--accent)">0101 &lt;/&gt;</text>
+    </svg>
+    <figure class="quote">
+      <blockquote>&ldquo;The most dangerous phrase in the language is, &lsquo;We&rsquo;ve always done it this way.&rsquo;&rdquo;</blockquote>
+      <figcaption>Grace Hopper, 1976</figcaption>
+    </figure>
+    <dl class="soap" data-l="pt">
+      <div><dt>Sinais</dt><dd>Vontade constante de perceber como os sistemas falham.</dd></div>
+      <div><dt>Origem</dt><dd>14 anos entre o Bloco Operatório e os Cuidados Intensivos Neurocríticos. Licenciado em Eng. Informática.</dd></div>
+      <div><dt>Anomalia</dt><dd>Curiosidade crónica detectada. Sem tratamento conhecido.</dd></div>
+      <div><dt>Protocolo</dt><dd>Alta para o digital. Monitorização contínua. Próxima avaliação: no próximo commit.</dd></div>
+    </dl>
+    <dl class="soap" data-l="en">
+      <div><dt>Signs</dt><dd>A constant urge to understand how systems fail.</dd></div>
+      <div><dt>Origin</dt><dd>14 years between the Operating Theatre and Neurocritical Intensive Care. BSc in Computer Engineering.</dd></div>
+      <div><dt>Anomaly</dt><dd>Chronic curiosity detected. No known cure.</dd></div>
+      <div><dt>Protocol</dt><dd>Discharged to digital. Continuous monitoring. Next assessment: the next commit.</dd></div>
+    </dl>
+    <nav>
+      <a href="#sobre"><span data-l="pt">Sobre</span><span data-l="en">About</span></a>
+      <a href="#percurso"><span data-l="pt">Percurso</span><span data-l="en">Background</span></a>
+      <a href="#ciber"><span data-l="pt">Cibersegurança</span><span data-l="en">Cybersecurity</span></a>
+      <a href="#escrita"><span data-l="pt">Escrita</span><span data-l="en">Writing</span></a>
+      <a href="#contacto"><span data-l="pt">Contacto</span><span data-l="en">Contact</span></a>
+    </nav>
+    <div class="tools">
+      <button id="bt-pt" aria-pressed="true">PT</button>
+      <button id="bt-en" aria-pressed="false">EN</button>
+      <button id="bt-theme" aria-label="Tema">◐</button>
+    </div>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/EDITAR" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/msbernardino" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://tryhackme.com/p/EDITAR" target="_blank" rel="noopener">TryHackMe</a>
+    </div>
+  </aside>
+
+  <main>
+    <section id="sobre">
+      <p class="kicker"><span data-l="pt">Bem-vindo</span><span data-l="en">Welcome</span></p>
+      <h2><span data-l="pt">Sobre mim</span><span data-l="en">About me</span></h2>
+      <div data-l="pt">
+        <p class="lead">Sou enfermeiro há cerca de 14 anos, no Bloco Operatório e nos Cuidados Intensivos Neurocríticos, e licenciado em Engenharia Informática.</p>
+        <p>Estou a construir uma carreira em cibersegurança, com foco na saúde: hospitais, dispositivos médicos e a protecção de dados clínicos. Conheço por dentro o ambiente onde estes sistemas funcionam e onde falham.</p>
+        <p>Este site regista o percurso: o que estudo, o que pratico e o que escrevo.</p>
+      </div>
+      <div data-l="en">
+        <p class="lead">I have worked as a nurse for about 14 years, in the Operating Theatre and Neurocritical Intensive Care, and hold a degree in Computer Engineering.</p>
+        <p>I am building a career in cybersecurity with a healthcare focus: hospitals, medical devices and the protection of clinical data. I know from the inside the environment where these systems run and where they fail.</p>
+        <p>This site documents the journey: what I study, what I practise and what I write.</p>
+      </div>
+    </section>
+
+    <section id="percurso">
+      <p class="kicker"><span data-l="pt">Experiência e formação</span><span data-l="en">Experience and education</span></p>
+      <h2><span data-l="pt">Percurso</span><span data-l="en">Background</span></h2>
+      <ul class="timeline">
+        <li>
+          <div class="when">2022 – 2026</div>
+          <div class="what">
+            <strong><span data-l="pt">Licenciatura em Engenharia Informática</span><span data-l="en">BSc in Computer Engineering</span></strong>
+            <span>Universidade Autónoma de Lisboa</span>
+          </div>
+        </li>
+        <li>
+          <div class="when"><span class="edit">EDITAR</span> – <span data-l="pt">presente</span><span data-l="en">present</span></div>
+          <div class="what">
+            <strong><span data-l="pt">Enfermeiro de Bloco Operatório e Cuidados Intensivos Neurocríticos</span><span data-l="en">Operating Theatre and Neurocritical Intensive Care Nurse</span></strong>
+            <span data-l="pt">Cerca de 14 anos de experiência clínica, Lisboa</span><span data-l="en">About 14 years of clinical experience, Lisbon</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="ciber">
+      <p class="kicker"><span data-l="pt">Em curso</span><span data-l="en">In progress</span></p>
+      <h2><span data-l="pt">Cibersegurança</span><span data-l="en">Cybersecurity</span></h2>
+      <p data-l="pt">Plano de estudo 2026–2027, do zero à Security+ e ao CTeSP. Actualizado à medida que avanço.</p>
+      <p data-l="en">Study plan 2026–2027, from the ground up to Security+. Updated as I go.</p>
+
+      <h3><span data-l="pt">Fase 0: Fundamentos</span><span data-l="en">Phase 0: Fundamentals</span></h3>
+      <div class="cards">
+        <div class="card"><span class="tag doing"><span data-l="pt">a decorrer</span><span data-l="en">in progress</span></span><h4>Introduction to Cybersecurity</h4><p>Cisco Networking Academy</p></div>
+        <div class="card"><span class="tag todo"><span data-l="pt">próximo</span><span data-l="en">next</span></span><h4>Networking Basics</h4><p>Cisco Networking Academy</p></div>
+        <div class="card"><span class="tag todo"><span data-l="pt">próximo</span><span data-l="en">next</span></span><h4>Pre Security</h4><p>TryHackMe</p></div>
+        <div class="card"><span class="tag todo"><span data-l="pt">próximo</span><span data-l="en">next</span></span><h4>Linux &amp; Windows Fundamentals</h4><p>TryHackMe</p></div>
+      </div>
+
+      <h3><span data-l="pt">Fase 1: Certificação</span><span data-l="en">Phase 1: Certification</span></h3>
+      <div class="cards">
+        <div class="card"><span class="tag todo"><span data-l="pt">planeado · 2027</span><span data-l="en">planned · 2027</span></span><h4>CompTIA Security+</h4><p data-l="pt">Exame previsto para Julho de 2027</p><p data-l="en">Exam planned for July 2027</p></div>
+      </div>
+
+      <h3><span data-l="pt">Relatórios de prática</span><span data-l="en">Practice write-ups</span></h3>
+      <p class="note" data-l="pt">Ainda sem relatórios. Os primeiros chegam com as salas do TryHackMe.</p>
+      <p class="note" data-l="en">No write-ups yet. The first ones will come with TryHackMe rooms.</p>
+    </section>
+
+    <section id="escrita">
+      <p class="kicker"><span data-l="pt">Trabalho académico</span><span data-l="en">Academic work</span></p>
+      <h2><span data-l="pt">Escrita</span><span data-l="en">Writing</span></h2>
+      <div class="pub">
+        <div class="title">Do Phishing ao Neurophishing</div>
+        <div class="meta" data-l="pt">Trabalho individual (formato IEEE) · UC de Segurança Informática · Universidade Autónoma de Lisboa</div>
+        <div class="meta" data-l="en">Individual coursework paper (IEEE format) · Computer Security course · Universidade Autónoma de Lisboa · in Portuguese</div>
+        <p data-l="pt">Da engenharia social clássica ao uso de conhecimento sobre o funcionamento cognitivo para manipular decisões. Defende que as defesas actuais são estruturalmente insuficientes e que é preciso redesenhar o processo de decisão, não só formar utilizadores.</p>
+        <p data-l="en">From classic social engineering to the use of knowledge about cognition to manipulate decisions. Argues that current defences are structurally inadequate and that the decision process itself must be redesigned, not just user training.</p>
+        <p class="note"><a href="EDITAR.pdf"><span data-l="pt">Ler PDF</span><span data-l="en">Read PDF</span></a> <span class="edit">EDITAR</span></p>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2><span data-l="pt">Contacto</span><span data-l="en">Contact</span></h2>
+      <p data-l="pt">Para contactos profissionais: <a href="mailto:EDITAR@email.com">EDITAR@email.com</a></p>
+      <p data-l="en">For professional enquiries: <a href="mailto:EDITAR@email.com">EDITAR@email.com</a></p>
+      <footer>© <span id="yr"></span> Marcus Bernardino</footer>
+    </section>
+  </main>
+</div>
+<script>
+(function(){
+  var root=document.documentElement;
+  function setLang(l){
+    root.lang=l;
+    document.getElementById('bt-pt').setAttribute('aria-pressed',l==='pt');
+    document.getElementById('bt-en').setAttribute('aria-pressed',l==='en');
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
+  setLang(saved || ((navigator.language||'pt').slice(0,2)==='pt'?'pt':'en'));
+  document.getElementById('bt-pt').onclick=function(){setLang('pt')};
+  document.getElementById('bt-en').onclick=function(){setLang('en')};
+  var t=null; try{t=localStorage.getItem('theme')}catch(e){}
+  if(t) root.setAttribute('data-theme',t);
+  document.getElementById('bt-theme').onclick=function(){
+    var dark=root.getAttribute('data-theme')==='dark' ||
+      (!root.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+    var n=dark?'light':'dark'; root.setAttribute('data-theme',n);
+    try{localStorage.setItem('theme',n)}catch(e){}
+  };
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var links=[].slice.call(document.querySelectorAll('nav a'));
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}
+  })},{rootMargin:'-40% 0px -55% 0px'});
+  document.querySelectorAll('main section').forEach(function(s){io.observe(s)});
+})();
+</script>
+</body>
+</html>
